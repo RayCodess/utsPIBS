@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 1;
+}
+
+body {
+    background-color: #257180;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav section aside"
+        "footer footer footer";
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #FFF0D1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+}
+
+.profile-photo {
+    width: 70px; 
+    height: 70px;
+    margin-right: 15px; 
+    border-radius: 50%;
+}
+
+.logo-kanan {
+    position: absolute;
+    right: 20px; 
+    top: 20px; 
+    width: 70px; 
+    height: auto; 
+}
+
+nav, section, aside {
+    margin: 15px; /* Memberikan jarak antar elemen */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan efek bayangan */
+    border-radius: 8px; /* Membuat sudut sedikit melengkung */
+    border: 1px solid #000; /* Ubah border menjadi warna hitam */
+}
+
+nav {
+    grid-area: nav;
+    background-color: #F75526;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    padding: 10px 0;
+    transition: transform 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+section {
+    background-color: #257180;
+    grid-area: section;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+section h2, section p strong, section p {
+    color: #ffffff;
+}
+
+.Hobi {
+    width: auto; 
+    height: auto; 
+}
+
+aside {
+    grid-area: aside;
+    background-color: #F75526;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+aside ul li, aside h3 {
+    color: #fdf9f9;
+}
+
+aside ul li a{
+    transition: transform 0.3s, color 0.3s;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+aside ul li a:hover {
+    transform: scale(1.1);
+    color: #000000;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #FFF0D1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 14px;
+    border-top: 1px solid #000;
+    margin-top: 15px;
+}
+
+.website-name a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Layout untuk tablet landscape */
+@media (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "nav section"
+            "aside aside"
+            "footer footer";
+        grid-template-columns: 25% 75%;
+    }
+
+    aside ul li a:hover {
+        transform: scale(1.1);
+        color: #ffffff;
+    }
+
+    nav {
+        padding: 20px;
+    }
+
+    nav ul li a {
+        color: #000000;
+    }
+
+    nav ul li a:hover {
+        transform: scale(1.1);
+        color: #ffffff;
+    }
+
+    section {
+        background-color: #257180;
+        color: #ffffff;
+    }
+
+    .Hobi {
+        width: auto; 
+        height: auto; 
+    }
+
+    aside {
+        background-color: #F75526;
+    }
+
+    footer {
+        background-color: #FFF0D1;
+        color: #333;
+    }
+}
+
+/* Layout untuk tablet portrait */
+@media (max-width: 768px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 100%;
+        grid-gap: 10px;
+    }
+
+    header {
+        background-color: #FFF0D1;
+    }
+
+    nav {
+        background-color: #F75526;
+        color: #ffffff;
+        padding: 10px; 
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .Hobi {
+        width: auto; 
+        height: auto; 
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.0em;
+        padding: 5px;
+        color: #000000;
+    }
+
+    nav ul li a:hover {
+        transform: scale(1.1);
+        color: #ffffff;
+    }
+
+    aside ul li a:hover {
+        transform: scale(1.1);
+        color: #ffffff;
+    }
+
+    section {
+        background-color: #257180;
+        color: #ffffff;
+    }
+
+    aside {
+        background-color: #F75526;
+        color: #fdf9f9;
+    }
+
+    footer {
+        background-color: #FFF0D1;
+        color: #333;
+    }
+}
+
+/* Layout untuk smartphone */
+@media (max-width: 480px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 100%;
+        grid-gap: 10px;
+    }
+
+    header {
+        background-color: #FFF0D1;
+    }
+
+    nav {
+        background-color: #F75526;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #000;
+    }
+
+    .Hobi {
+        width: auto; 
+        height: auto; 
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 1,2em;
+        font-weight: bold;
+        padding: 5px;
+        width: 100%;
+    }
+
+    nav ul li a:hover {
+        transform: scale(1.1);
+        color: #ffffff;
+    }
+
+    aside ul li a:hover {
+        transform: scale(1.1);
+        color: #ffffff;
+    }
+
+    section {
+        background-color: #257180;
+        color: #ffffff;
+        border: 1px solid #000;
+    }
+
+    aside {
+        background-color: #F75526;
+        color: #fdf9f9;
+        border: 1px solid #000;
+    }
+
+    footer {
+        background-color: #FFF0D1;
+        color: #333;
+        border-top: 1px solid #000;
+    }
+}

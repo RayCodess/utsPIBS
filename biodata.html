@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function UbahHobi(section) {
+        var content = document.getElementById("section-content");
+
+        if (section === "BermainGame") {
+            content.innerHTML = `
+                <div class="hobi-section">
+                    <img src="esport.jpg" alt="Bermain Game" class="Hobi">
+                    <div class="desc">
+                        <h4>Bermain Game</h4>
+                        <p>Saya suka bermain game, terutama game kompetitif seperti Mobile Legends, yang juga menjadi sumber tambahan uang saku saya melalui eSports.</p>
+                    </div>
+                </div>
+            `;
+        } else if (section === "Basket") {
+            content.innerHTML = `
+                <div class="hobi-section">
+                    <img src="basket.jpg" alt="Bermain Basket" class="Hobi">
+                    <div class="desc">
+                        <h4>Bermain Basket</h4>
+                        <p>Saya sering bermain basket di waktu luang untuk menjaga kesehatan fisik dan juga untuk bersosialisasi dengan teman-teman.</p>
+                    </div>
+                </div>
+            `;
+        } else if (section === "OprekHp") {
+            content.innerHTML = `
+                <div class="hobi-section">
+                    <img src="oprek.jpg" alt="Oprek HP" class="Hobi">
+                    <div class="desc">
+                        <h4>Oprek HP</h4>
+                        <p>Saya memiliki ketertarikan dalam oprek perangkat elektronik, terutama HP, untuk memahami lebih dalam cara kerjanya dan meningkatkan performanya.</p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+    
+        function ubahKonten(section) {
+            var content = document.getElementById("section-content");
+
+            if (section === "biodata") {
+                content.innerHTML = `
+                    <h2>Biodata</h2>
+                    <p><strong>NIM:</strong> 2023081059</p>
+                    <p><strong>Nama:</strong> Muhammad Rayhan</p>
+                    <p><strong>Agama:</strong> Islam</p>
+                    <p><strong>Tanggal Lahir:</strong> 11 May 2006</p>
+                    <p><strong>Tempat Lahir:</strong> Jakarta</p>
+                `;
+            } else if (section === "pendidikan") {
+                content.innerHTML = `
+                    <h2>Pendidikan</h2>
+                    <p><strong>SD:</strong> SDN Kaliabang Tengah 7</p>
+                    <p><strong>SMP:</strong> SMPS Muhammadiyah 8</p>
+                    <p><strong>SMA:</strong> SMAS Kartika X-1</p>
+                `;
+            } else if (section === "pengalaman") {
+                content.innerHTML = `
+                    <h2>Pengalaman</h2>
+                    <p><strong>Internship:</strong> Magang Brin</p>
+                    <p><strong>Volunteer:</strong> Anggota Kepanitiaan Acara Kemahasiswaan</p>
+                `;
+            } else if (section === "keahlian") {
+                content.innerHTML = `
+                    <h2>Keahlian</h2>
+                    <p>- Pemrograman (Html, css, java script)</p>
+                    <p>- Matematika</p>
+                `;
+            } else if (section === "publikasi") {
+                content.innerHTML = `
+                    <h2>Publikasi</h2>
+                    <p><strong>Paper:</strong> Analisis Sistem Informasi, 2023</p>
+                    <p><strong>Artikel:</strong> Teknologi AI dan Masa Depan, 2022</p>
+                `;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <video autoplay muted loop id="bg-video">
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <img src="profil.jpg" alt="Foto Mahasiswa" class="profile-photo">
+        <h3>Profil Mahasiswa</h3>
+        <img src="logo.png" alt="Logo" class="logo-kanan">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" onclick="ubahKonten('biodata');">Biodata</a></li>
+            <li><a href="#" onclick="ubahKonten('pendidikan');">Pendidikan</a></li>
+            <li><a href="#" onclick="ubahKonten('pengalaman');">Pengalaman</a></li>
+            <li><a href="#" onclick="ubahKonten('keahlian');">Keahlian</a></li>
+            <li><a href="#" onclick="ubahKonten('publikasi');">Publikasi</a></li>
+        </ul>
+    </nav>
+
+    <section id="section-content">
+        <h2>Biodata</h2>
+        <div class="biodata">
+        <p><strong>NIM:</strong> 2023081059</p>
+        <p><strong>Nama:</strong> Muhammad Rayhan</p>
+        <p><strong>Agama:</strong> Islam</p>
+        </div>
+        <p><strong>Tanggal Lahir:</strong> 11 May 2006</p>
+        <p><strong>Tempat Lahir:</strong> Jakarta</p>
+    </section>
+
+    <aside>
+        <h3>Hobi</h3>
+        <ul style="list-style-type: none;">
+            <li><a href="#" onclick="UbahHobi('BermainGame');">Bermain game</a></li>
+            <li><a href="#" onclick="UbahHobi('Basket');">Basket</a></li>
+            <li><a href="#" onclick="UbahHobi('OprekHp');">Oprek Hp</a></li>
+        </ul>
+    </aside>
+    
+    <footer>
+        <div class="social-media">
+            <p>
+                <img src="facebook.png" alt="Facebook" style="width: 20px; height: 20px;">
+                @Ban.
+            </p>
+            <p>
+                <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px;">
+                @hanzrelevant
+            </p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024. All Rights Reserved.</p> 
+        </div>
+        <div class="website-name">
+            <a>Profil Rey</a>
+            <p>We Make IT Happen</p> 
+        </div>
+    </footer>
+
+</body>
+</html>
